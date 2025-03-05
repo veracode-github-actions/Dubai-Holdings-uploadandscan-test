@@ -19,7 +19,7 @@ jobs:
 
     - name: Package Source Code Using Veracode CLI
       run: |
-        ./veracode package -das app --output ./verascan
+        ./veracode package -das . --output ./verascan
 
         # Check if the verascan directory exists
         if [ ! -d "verascan" ]; then
@@ -48,3 +48,4 @@ jobs:
           # exclude: '*.js'
           # include: '*.war'
           criticality: 'VeryHigh'
+          deleteincompletescan: 0
